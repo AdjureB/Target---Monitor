@@ -64,9 +64,7 @@ def monitor():
   title = metadata_response['data']['product']['item']['product_description']['title']
 
 #Discord Embed
-  hook = Webhook('https://discord.com/api/webhooks/771466332637757440/dcn9IM8PcbK_TN-1nltDRiutEBeNGtLAd8Nk1vg6TrvjOkLGnudb2xEKKQ5hvSPs8MZX')
-  hook1 = Webhook('https://discord.com/api/webhooks/812983678623416320/ZVJjTJoK8ZdKAbxLXDD67dXy4gEUixJhw9PCgsPF7siJTCFXrTe6HmvupOWObVuai3Kx')
-#bbburl = 
+  hook = Webhook(Your Webhook)
 
   embed = Embed(description=str(url),
       color=0xFFFDD0,
@@ -85,8 +83,7 @@ def monitor():
   time.sleep(0.5)
   if stocknum > 0.0:
     print("In stock!")
-    #hook.send(embed=embed)
-    #hook1.send(embed=embed)
+    hook.send(embed=embed)
     time.sleep(10)
     monitor()
   else:
