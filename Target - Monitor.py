@@ -81,10 +81,11 @@ def monitor():
 #Function
   time.sleep(0.5)
   if stocknum > 0.0:
+    print(str(stocknum))
     print("In stock!")
     hook.send(embed=embed)
     time.sleep(10)
 
-
+print("Monitoring...")
 while True:
   monitor()
