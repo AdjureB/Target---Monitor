@@ -51,7 +51,6 @@ def monitor():
   metadata_response = requests.request("GET", burl, headers=bheaders, data=bpayload).json()
 
   stocknum = response['data']['product']['fulfillment']['shipping_options']['available_to_promise_quantity']
-  print(stocknum)
 
   prodid = response['data']['product']['fulfillment']['product_id']
 
@@ -64,7 +63,7 @@ def monitor():
   title = metadata_response['data']['product']['item']['product_description']['title']
 
 #Discord Embed
-  hook = Webhook(Your Webhook)
+  hook = Webhook('https://discord.com/api/webhooks/639230937850314759/07BM65tX-EkmxmslfGJ67W48aRU6f_ry_gnnVASVYKcv1jTw_98dmi2fmdVQL-6ke2-8')
 
   embed = Embed(description=str(url),
       color=0xFFFDD0,
@@ -85,8 +84,7 @@ def monitor():
     print("In stock!")
     hook.send(embed=embed)
     time.sleep(10)
-    monitor()
-  else:
-    monitor()
 
-monitor()
+
+while True:
+  monitor()
